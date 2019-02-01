@@ -3,7 +3,7 @@ import React from 'react'
 class Form extends React.Component {
   render () {
     return (
-      <form className="form-inline">
+      <form className="form-inline main">
         <div className="form-group">
           <input type="text" className="form-control"></input>
         </div>

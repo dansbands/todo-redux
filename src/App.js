@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css';
 import Form from './components/Form'
 import ListContainer from './components/ListContainer'
-import ListCard from './components/ListCard'
+
 
 class App extends Component {
   render() {
@@ -14,7 +14,6 @@ class App extends Component {
 
             <Form />
             <ListContainer />
-            <ListCard />
 
           </div>
         </div>
