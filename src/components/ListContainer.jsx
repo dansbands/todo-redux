@@ -1,33 +1,31 @@
 import React from 'react'
 import ListCard from './ListCard'
-import { fetchTodos } from '../actions'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { fetchTodos } from '../actions'
 
 class ListContainer extends React.Component {
-  // state = {
-  //   items: []
-  // }
 
-  componentWillMount() {
-    // fetch('https://jsonplaceholder.typicode.com/todos/')
-    // .then(res => res.json())
-    // .then(json => this.setState({ items: json }))
+  componentDidMount() {
     this.props.fetchTodos()
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   console.log('nextProps', nextProps);
+  // }
+
   renderCards = () => {
-    const { todos } = this.props;
-    console.log("todos", todos);
-    if (todos.length) {
-      return todos.map(i => {
-        return <ListCard key={i.id} data={i}/>
+    const { data } = this.props.todos;
+    console.log("LC todos", data);
+    if (data) {
+      return data.map(i => {
+        return <ListCard key={i._id} data={i}/>
       })
     }
   }
 
   render () {
-    console.log('ListContainer Props', this.props);
+    // console.log('ListContainer Props', this.props);
     return (
       <div className="list-container">
         {this.renderCards()}
@@ -37,7 +35,7 @@ class ListContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log("mstp", state);
+  // console.log("mstp", state);
   return {
     todos: state.todos
   }

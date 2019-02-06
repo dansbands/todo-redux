@@ -9,7 +9,7 @@ const initialState = {
 const todosReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_TODOS:
-    console.log('fetchTodos Reducer', action);
+    // console.log('fetchTodos Reducer', action);
       return action.payload
 
 
